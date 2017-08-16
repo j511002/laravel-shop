@@ -63,8 +63,8 @@ interface Cate
         array $search = [],
         int $limit = 20,
         array $order = ['id' => 'desc'],
-        int $page = 1,
-        array $columns = ['*']
+        array $columns = ['*'],
+        int $page = 1
     ): LengthAwarePaginator;
 
     /**

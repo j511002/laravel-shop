@@ -16,6 +16,12 @@ use SimpleShop\Cate\Contracts\Cate;
 use SimpleShop\Cate\Exceptions\CommodityCateException;
 use SimpleShop\Cate\Exceptions\ExceptionCode;
 use SimpleShop\Cate\Repositories\CateRepository;
+use SimpleShop\Cate\Repositories\GetChildAll;
+use SimpleShop\Cate\Repositories\GetChildren;
+use SimpleShop\Cate\Repositories\GetLeaves;
+use SimpleShop\Cate\Repositories\GetParentAll;
+use SimpleShop\Cate\Repositories\Order;
+use SimpleShop\Cate\Repositories\Search;
 
 class CateImpl implements Cate
 {
@@ -33,7 +39,14 @@ class CateImpl implements Cate
      */
     public function getLeaves(): Collection
     {
-        // TODO: Implement getLeaves() method.
+        return $this->repo->pushCriteria(new GetLeaves())
+            ->all([
+                'id',
+                'pid',
+                'root_id',
+                'deep',
+                'name'
+            ]);
     }
 
     /**
@@ -48,7 +61,11 @@ class CateImpl implements Cate
      */
     public function getChildren($id, bool $all = false): Collection
     {
-        // TODO: Implement getChildren() method.
+        if (! $all) {
+            return $this->repo->pushCriteria(new GetChildren($id))->all();
+        } else {
+            return $this->repo->pushCriteria(new GetChildAll($id))->all();
+        }
     }
 
     /**
@@ -60,7 +77,15 @@ class CateImpl implements Cate
      */
     public function getParent($id): Model
     {
-        // TODO: Implement getParent() method.
+        $temp = $this->show($id);
+
+        $result = $this->repo->find($temp->pid);
+
+        if (is_null($result)) {
+            throw new CommodityCateException('没有找到对应的商品分类', ExceptionCode::NOT_FIND_RESOURCE);
+        }
+
+        return $result;
     }
 
     /**
@@ -70,7 +95,10 @@ class CateImpl implements Cate
      */
     public function getParentAll($id): Collection
     {
-        // TODO: Implement getParentAll() method.
+        $ids = $this->repo->find($id, ['path'])->toArray();
+
+        return $this->repo->pushCriteria(new GetParentAll($ids))
+            ->all();
     }
 
     /**
@@ -86,10 +114,12 @@ class CateImpl implements Cate
         array $search = [],
         int $limit = 20,
         array $order = ['id' => 'desc'],
-        int $page = 1,
-        array $columns = ['*']
+        array $columns = ['*'],
+        int $page = 1
     ): LengthAwarePaginator {
-        // TODO: Implement index() method.
+        return $this->repo->pushCriteria(new Search($search))
+            ->pushCriteria(new Order($order))
+            ->paginate($limit, $columns, $page);
     }
 
     /**
@@ -99,7 +129,13 @@ class CateImpl implements Cate
      */
     public function show($id): Model
     {
-        // TODO: Implement show() method.
+        $result = $this->repo->with(['parentCate'])->find($id);
+
+        if (is_null($result)) {
+            throw new CommodityCateException("没有找到对应的商品分类", ExceptionCode::NOT_FIND_RESOURCE);
+        }
+
+        return $result;
     }
 
     /**
