@@ -1,0 +1,21 @@
+{
+    "name": "simple-shop/cate",
+    "description": "laravel商品系统-分类",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JiangZH",
+            "email": "jiangzhiheng@liweijia.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "simple-shop/repositories": ">=0.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleShop\\Cate\\": "src/"
+        }
+    }
+}
