@@ -156,14 +156,14 @@ class CateImpl implements Cate
             // 计算深度
             $deep = $parent->deep + 1;
             // 计算path
-            $path = $parent->path . "," . $result->id;
+            $path = $parent->path . $result->id . ",";
         } else {
             // 计算根id
             $rootId = $result->id;
             // 计算深度
             $deep = 1;
             // 计算path
-            $path = $result->id;
+            $path = "," . $result->id . ",";
         }
 
         /*

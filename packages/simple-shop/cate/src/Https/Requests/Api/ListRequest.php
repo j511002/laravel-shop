@@ -44,6 +44,10 @@ class ListRequest extends Request
             $params['sort'] = 'desc';
         }
 
+        if (! isset($params['limit'])) {
+            $params['limit'] = 20;
+        }
+
         return $params;
     }
 }

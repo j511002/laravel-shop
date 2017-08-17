@@ -37,7 +37,7 @@ class GetChildAll extends Criteria
      */
     public function apply($model, Repository $repository)
     {
-        $model = $model->where('path', 'like', ",{$this->id}%");
+        $model = $model->where('path', 'like', ",{$this->id},");
 
         return $model;
     }
