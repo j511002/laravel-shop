@@ -1,11 +1,15 @@
 {
-    "name": "simple-shop/cate",
+    "name": "simple-shop/laravel-shop-cate",
     "description": "laravel商品系统-分类",
     "license": "MIT",
     "authors": [
         {
             "name": "JiangZH",
             "email": "jiangzhiheng@liweijia.com"
+        },
+        {
+            "name": "WangZD",
+            "email": "wangzhoudong@foxmail.com"
         }
     ],
     "minimum-stability": "dev",
