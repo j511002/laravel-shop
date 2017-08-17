@@ -25,7 +25,7 @@ class SubmitRequest extends Request
     public function rules()
     {
         return [
-            'id'          => 'sometimes|integer|exists:commodity_cate,id',
+            'id'          => 'sometimes|integer|exists:commodity_cates,id',
             'pid'         => 'required|integer',
             'name'        => 'required|string|between:1,10',
             'description' => 'sometimes|string|max:50',

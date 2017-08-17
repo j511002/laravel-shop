@@ -26,11 +26,14 @@ class CommodityCate extends Model
      *
      * @var array
      */
-    protected $guarded = [
-        'id',
-        'root_id',
-        'deep',
-        'path',
+    protected $fillable = [
+        'pid',
+        'sort',
+        'name',
+        'title',
+        'keyword',
+        'description',
+        'cate_dir',
     ];
 
     /**

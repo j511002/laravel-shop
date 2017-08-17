@@ -4,6 +4,8 @@ namespace SimpleShop\Cate;
 
 use Illuminate\Support\ServiceProvider;
 use SimpleShop\Cate\Contracts\Cate;
+use Validator;
+use DB;
 
 class SimpleShopCateServiceProvider extends ServiceProvider
 {
@@ -21,7 +23,7 @@ class SimpleShopCateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(dirname(dirname(__FILE__)) .'/migrations');
+        $this->loadMigrationsFrom(dirname(dirname(__FILE__)) . '/migrations');
     }
 
     /**

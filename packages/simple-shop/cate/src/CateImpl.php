@@ -22,6 +22,7 @@ use SimpleShop\Cate\Repositories\GetLeaves;
 use SimpleShop\Cate\Repositories\GetParentAll;
 use SimpleShop\Cate\Repositories\Order;
 use SimpleShop\Cate\Repositories\Search;
+use App;
 
 class CateImpl implements Cate
 {
@@ -30,6 +31,11 @@ class CateImpl implements Cate
     public function __construct(CateRepository $cateRepository)
     {
         $this->repo = $cateRepository;
+    }
+
+    public function __clone()
+    {
+        $this->repo = App::make(CateRepository::class);
     }
 
     /**
@@ -154,14 +160,14 @@ class CateImpl implements Cate
             $parent = $this->show($data['pid']);
             $rootId = $parent->root_id;
             // 计算深度
-            $deep = $parent->deep + 1;
+            $deep = (int)$parent->deep + 1;
             // 计算path
             $path = $parent->path . $result->id . ",";
         } else {
             // 计算根id
             $rootId = $result->id;
             // 计算深度
-            $deep = 1;
+            $deep = 0;
             // 计算path
             $path = "," . $result->id . ",";
         }
@@ -203,7 +209,7 @@ class CateImpl implements Cate
      */
     public function destroy($id)
     {
-        if (false === $bool = $this->repo->applyCriteria()->delete($id)) {
+        if (false === $bool = $this->repo->delete($id)) {
             throw new CommodityCateException('商品分类没有删除成功', ExceptionCode::DELETED_FAILURE);
         }
 

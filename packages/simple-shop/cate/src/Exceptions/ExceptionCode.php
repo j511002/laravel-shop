@@ -18,6 +18,7 @@ class ExceptionCode
     const UPDATED_FAILURE = 11; // 修改数据失败
     const DELETED_FAILURE = 12; // 删除数据失败
     const DATA_EXIST = 13;      // 数据已经存在
+    const DATA_USED = 14;       // 数据已经被使用
 
     /*
      | 没有找到资源错误

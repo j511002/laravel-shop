@@ -20,7 +20,9 @@ class CreateCommodityCateTable extends Migration
             $table->string("path", 32)->default(0)->comment("分类树");
             $table->smallInteger('sort', false, true)->default(0)->comment('排序');
             $table->string("name", 32)->comment("分类名称");
-            $table->string("description", 255)->default("")->comment("分类备注");
+            $table->string('title', 32)->default('')->comment('分类标题');
+            $table->string('keyword')->default('')->comment('分类关键字');
+            $table->string('cate_dir', 32)->default('')->comment('分类dir');
 
             $table->dateTime("created_at");
             $table->dateTime("updated_at");
@@ -29,6 +31,7 @@ class CreateCommodityCateTable extends Migration
             $table->index("pid");
             $table->index("root_id");
             $table->index("deep");
+            $table->index("path");
         });
     }
 
@@ -39,6 +42,6 @@ class CreateCommodityCateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("commodity_cate");
+        Schema::dropIfExists("commodity_cates");
     }
 }
