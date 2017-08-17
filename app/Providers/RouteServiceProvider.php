@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapCateRoutes();
     }
 
     /**
@@ -69,5 +69,16 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "cate" routes for the application.
+     *
+     * @return void
+     */
+    protected function mapCateRoutes()
+    {
+        Route::namespace('SimpleShop\Cate\Https\Controllers')
+            ->group(base_path('routes/commodity_cate.php'));
     }
 }
