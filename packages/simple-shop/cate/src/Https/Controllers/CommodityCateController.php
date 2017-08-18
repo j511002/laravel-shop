@@ -127,7 +127,7 @@ class CommodityCateController extends Controller
             throw new CommodityCateException("该分类已经被其他分类使用", ExceptionCode::DATA_USED);
         }
         $this->service = clone $this->service;
-        $this->service->destroy($id);
+        $this->service->resetRepository()->destroy($id);
 
         return $this->success();
     }

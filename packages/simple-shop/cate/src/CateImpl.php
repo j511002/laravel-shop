@@ -33,11 +33,6 @@ class CateImpl implements Cate
         $this->repo = $cateRepository;
     }
 
-    public function __clone()
-    {
-        $this->repo = App::make(CateRepository::class);
-    }
-
     /**
      * 获取叶子节点
      *
@@ -207,12 +202,24 @@ class CateImpl implements Cate
      *
      * @return mixed
      */
-    public function destroy($id)
+    public function destroy($id) :bool
     {
         if (false === $bool = $this->repo->delete($id)) {
             throw new CommodityCateException('商品分类没有删除成功', ExceptionCode::DELETED_FAILURE);
         }
 
         return $bool;
+    }
+
+    /**
+     * 重置仓库
+     *
+     * @return $this
+     */
+    public function resetRepository()
+    {
+        $this->repo->makeModel();
+
+        return $this;
     }
 }

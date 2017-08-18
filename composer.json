@@ -23,7 +23,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "SimpleShop\\Cate\\": "packages/simple-shop/cate/src"
+            "SimpleShop\\Cate\\": "packages/simple-shop/cate/src",
+            "SimpleShop\\Brand\\": "packages/simple-shop/brand/src"
         }
     },
     "autoload-dev": {

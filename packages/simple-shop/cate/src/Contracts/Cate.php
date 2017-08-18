@@ -94,5 +94,12 @@ interface Cate
      *
      * @return mixed
      */
-    public function destroy($id);
+    public function destroy($id) :bool;
+
+    /**
+     * 重置仓库
+     *
+     * @return $this
+     */
+    public function resetRepository();
 }
