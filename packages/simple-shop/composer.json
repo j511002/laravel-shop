@@ -1,0 +1,19 @@
+{
+    "name": "simple-shop/laravel-shop-exceptions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JiangZH",
+            "email": "jiangzhiheng@liweijia.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleShop\\Exceptions\\": "src/"
+        }
+    }
+}
