@@ -11,10 +11,10 @@ namespace SimpleShop\Cate;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use SimpleShop\Cate\Contracts\Cate;
+use SimpleShop\Cate\Contracts\AbstractCate;
 use SimpleShop\Cate\Exceptions\CommodityCateException;
 use SimpleShop\Cate\Exceptions\ExceptionCode;
+<<<<<<< HEAD
 use SimpleShop\Cate\Repositories\CateRepository;
 use SimpleShop\Cate\Repositories\GetChildAll;
 use SimpleShop\Cate\Repositories\GetChildren;
@@ -101,7 +101,15 @@ class CateImpl implements Cate
         return $this->repo->pushCriteria(new GetParentAll($ids))
             ->all();
     }
+=======
+use SimpleShop\Cate\Repositories\Cate\CateRepository;
+use SimpleShop\Cate\Repositories\Cate\Order;
+use SimpleShop\Cate\Repositories\Cate\Search;
+use App;
+>>>>>>> 215eb0da42690b34639b5907e188be6d8fee127e
 
+class CateImpl extends AbstractCate
+{
     /**
      * @param array $search
      * @param int   $limit
@@ -212,6 +220,7 @@ class CateImpl implements Cate
     }
 
     /**
+<<<<<<< HEAD
      * 重置仓库
      *
      * @return $this
@@ -221,5 +230,14 @@ class CateImpl implements Cate
         $this->repo->makeModel();
 
         return $this;
+=======
+     * 设置repo
+     *
+     * @return mixed|CateRepository
+     */
+    public function setRepository()
+    {
+        return App::make(CateRepository::class);
+>>>>>>> 215eb0da42690b34639b5907e188be6d8fee127e
     }
 }

@@ -2,17 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: coffeekizoku
- * Date: 2017/8/16
- * Time: 下午5:42
+ * Date: 2017/8/18
+ * Time: 上午11:18
  */
 
-namespace SimpleShop\Cate\Repositories;
+namespace SimpleShop\Brand\Repositories;
 
 
-use SimpleShop\Cate\Models\CommodityCate;
+use SimpleShop\Brand\Models\CommodityBrand;
 use SimpleShop\Repositories\Eloquent\Repository;
 
-class CateRepository extends Repository
+class BrandRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -21,6 +21,6 @@ class CateRepository extends Repository
      */
     public function model()
     {
-        return CommodityCate::class;
+        return CommodityBrand::class;
     }
 }

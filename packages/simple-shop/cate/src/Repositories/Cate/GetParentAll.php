@@ -3,30 +3,30 @@
  * Created by PhpStorm.
  * User: coffee
  * Date: 2017/8/17
- * Time: 上午1:03
+ * Time: 上午1:05
  */
 
-namespace SimpleShop\Cate\Repositories;
+namespace SimpleShop\Cate\Repositories\Cate;
 
 
 use SimpleShop\Repositories\Contracts\RepositoryInterface as Repository;
 use SimpleShop\Repositories\Criteria\Criteria;
 
-class GetChildAll extends Criteria
+class GetParentAll extends Criteria
 {
     /**
-     * @var int|string
+     * @var array
      */
-    private $id;
+    private $ids;
 
     /**
-     * GetChildAll constructor.
+     * GetParent constructor.
      *
-     * @param int|string $id
+     * @param array $ids
      */
-    public function __construct($id)
+    public function __construct(array $ids)
     {
-        $this->id = $id;
+        $this->ids = $ids;
     }
 
     /**
@@ -37,7 +37,7 @@ class GetChildAll extends Criteria
      */
     public function apply($model, Repository $repository)
     {
-        $model = $model->where('path', 'like', ",{$this->id},");
+        $model = $model->whereIn('id', $this->ids);
 
         return $model;
     }

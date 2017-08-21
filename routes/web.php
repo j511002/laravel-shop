@@ -15,3 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('test', function () {
+    $a = App::make(\SimpleShop\CateBrand\CateBrandImpl::class);
+    $a = $a->test2();
+    dd($a);
+});
+

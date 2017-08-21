@@ -1,0 +1,23 @@
+{
+    "name": "simple-shop/laravel-shop-cate-brand",
+    "description": "laravel商城分类与品牌的关联",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JiangZH",
+            "email": "jiangzhiheng@liweijia.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "simple-shop/repositories": ">=0.14",
+        "simple-shop/laravel-shop-brand": ">=0.1.0",
+        "simple-shop/laravel-shop-cate": ">=0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleShop\\CateBrand\\": "src/"
+        }
+    }
+}

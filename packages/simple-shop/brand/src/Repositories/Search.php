@@ -6,9 +6,11 @@
  * Time: 上午12:58
  */
 
-namespace SimpleShop\Cate\Repositories;
+namespace SimpleShop\Brand\Repositories;
 
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use SimpleShop\Repositories\Contracts\RepositoryInterface as Repository;
 use SimpleShop\Repositories\Criteria\Criteria;
 
@@ -30,8 +32,9 @@ class Search extends Criteria
     }
 
     /**
-     * @param            $model
-     * @param Repository $repository
+     * @param  Model|Builder $model
+     * @param Repository     $repository
+     *
      * @return mixed
      */
     public function apply($model, Repository $repository)

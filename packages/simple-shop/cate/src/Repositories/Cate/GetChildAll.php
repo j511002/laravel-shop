@@ -3,17 +3,32 @@
  * Created by PhpStorm.
  * User: coffee
  * Date: 2017/8/17
- * Time: 上午1:01
+ * Time: 上午1:03
  */
 
-namespace SimpleShop\Cate\Repositories;
+namespace SimpleShop\Cate\Repositories\Cate;
 
 
 use SimpleShop\Repositories\Contracts\RepositoryInterface as Repository;
 use SimpleShop\Repositories\Criteria\Criteria;
 
-class GetLeaves extends Criteria
+class GetChildAll extends Criteria
 {
+    /**
+     * @var int|string
+     */
+    private $id;
+
+    /**
+     * GetChildAll constructor.
+     *
+     * @param int|string $id
+     */
+    public function __construct($id)
+    {
+        $this->id = $id;
+    }
+
     /**
      * @param                     $model
      * @param Repository          $repository
@@ -22,7 +37,7 @@ class GetLeaves extends Criteria
      */
     public function apply($model, Repository $repository)
     {
-        $model = $model->whereRaw("id NOT IN (SELECT `pid` FROM commodity_cate)");
+        $model = $model->where('path', 'like', ",{$this->id},");
 
         return $model;
     }
