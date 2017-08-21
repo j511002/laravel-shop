@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bceec37106e0e4c0da5a3695c279f4bb",
+    "content-hash": "ea91ad5fca01beebb34f6d418bf26970",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1519,16 +1519,16 @@
         },
         {
             "name": "simple-shop/repositories",
-            "version": "0.14",
+            "version": "0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/j511002/laravel-shop-repository.git",
-                "reference": "c8aa0ef54f3eb503a0a913376636c7563ec66864"
+                "reference": "24273d51f2c3d1fd917b6d150b6d29d41eed8873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/j511002/laravel-shop-repository/c8aa0ef54f3eb503a0a913376636c7563ec66864.zip",
-                "reference": "c8aa0ef54f3eb503a0a913376636c7563ec66864",
+                "url": "https://files.phpcomposer.com/files/j511002/laravel-shop-repository/24273d51f2c3d1fd917b6d150b6d29d41eed8873.zip",
+                "reference": "24273d51f2c3d1fd917b6d150b6d29d41eed8873",
                 "shasum": ""
             },
             "require": {
@@ -1574,7 +1574,7 @@
                 "repositories",
                 "repository"
             ],
-            "time": "2017-08-16T08:14:35+00:00"
+            "time": "2017-08-21T03:09:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2117,16 +2117,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://files.phpcomposer.com/files/symfony/polyfill-mbstring/7c8fae0ac1d216eb54349e6a8baa57d515fe8803.zip",
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
                 "shasum": ""
             },
             "require": {
@@ -2138,7 +2138,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -2172,7 +2172,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "symfony/process",
@@ -3200,16 +3200,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "ecb0b2cdaa0add708fe6f329ef65ae0c5225130b"
+                "reference": "9a02332089ac48e704c70f6cefed30c224e3c0b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/ecb0b2cdaa0add708fe6f329ef65ae0c5225130b",
-                "reference": "ecb0b2cdaa0add708fe6f329ef65ae0c5225130b",
+                "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-token-stream/9a02332089ac48e704c70f6cefed30c224e3c0b0.zip",
+                "reference": "9a02332089ac48e704c70f6cefed30c224e3c0b0",
                 "shasum": ""
             },
             "require": {
@@ -3245,7 +3245,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-08-03T14:17:41+00:00"
+            "time": "2017-08-20T05:47:52+00:00"
         },
         {
             "name": "phpunit/phpunit",

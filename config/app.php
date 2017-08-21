@@ -183,6 +183,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         SimpleShop\Cate\SimpleShopCateServiceProvider::class,
         SimpleShop\Brand\SimpleShopBrandServiceProvider::class,
+        SimpleShop\CateBrand\SimpleShopCateBrandServiceProvider::class,
     ],
 
     /*

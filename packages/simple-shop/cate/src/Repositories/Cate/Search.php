@@ -6,7 +6,7 @@
  * Time: 上午12:58
  */
 
-namespace SimpleShop\Cate\Repositories;
+namespace SimpleShop\Cate\Repositories\Cate;
 
 
 use SimpleShop\Repositories\Contracts\RepositoryInterface as Repository;

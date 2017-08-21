@@ -31,9 +31,7 @@ class SimpleShopBrandServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Brand::class, function ($app) {
-            return new BrandImpl();
-        });
+        $this->app->singleton(Brand::class, BrandImpl::class);
     }
 
     /**
